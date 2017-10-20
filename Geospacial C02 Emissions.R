@@ -20,7 +20,7 @@ str(unique(CO2)$country)
 
 for(country in NatEarth$iso_a2){
   for(YEAR in 1960:2016){
-    Value <- CO2[CO2$iso2c==country&&CO2$year==YEAR, "EN.ATM.CO2E.KT"]
+    Value <- CO2[CO2$iso2c==country&CO2$year==YEAR, "EN.ATM.CO2E.KT"]
     
     if(length(Value) > 0){
       NatEarth[NatEarth$iso_a2==country, paste0("CO2_",YEAR)] <- as.numeric(paste(Value))
